@@ -1,0 +1,12 @@
+﻿<div class="span9">
+	<h2>Browse Products by Category</h2><br>
+	<table class="table table-striped table-condensed">
+			<tbody>
+			<% @categories.each do |category| %>
+			<tr>
+				<td><h3><%= link_to category.name, category_path(category)  %></h3></td>
+			</tr>
+			<% end %>
+			</tbody>
+	</table>
+</div>

@@ -1,0 +1,24 @@
+<div class="span9">
+	<h2><%= link_to "Categories", categories_path %> > 
+	<%= @category.name %></h2>
+
+	<table class="table">
+		<thead>
+			<tr>
+			<th>Name</th>
+			<th>Manufacturer</th>
+			<th>Model</th>
+		</tr>
+		</thead>
+		<tbody>
+		<% @category.products.each do |product| %>
+		<tr>
+			<td><%= product.name %></td>
+			<td><a href="<%= manufacturer_path(product.manufacturer) %>"><%= product.manufacturer.name %></a></td>
+			<td><%= product.model %></td>
+			<td><a class="btn" href="<%= product_path(product) %>">View</button></td>
+		</tr>
+		<% end %>
+		</tbody>
+	</table>
+</div>

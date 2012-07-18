@@ -1,0 +1,33 @@
+﻿<div class="span9">
+	<h2>Articles &amp Press Releases</h2><br>
+
+	<table class="table">
+		<thead>
+			<tr>
+				<th><%= sortable "published", "Date" %></th>
+				<th><%= sortable "title" %></th>
+			</tr>
+		</thead>
+		<tbody>
+		<% @articles.each do |article|  %>
+			<tr>
+				<td>
+					<strong>
+						<%= article.published.strftime("%B %d, %Y") %>
+					</strong>
+				</td>
+				<td>
+					<h3>
+						<%= link_to article.title, article_path(article) %>
+					</h3>
+					<p>
+						<%= truncate(article.body, :length => 250)%>
+						<%= link_to " Read More", article_path(article) %>
+					</p>
+				</td>
+			</tr>
+		<% end %>
+		</tbody>
+	</table>
+	<%= paginate @articles %>
+</div>

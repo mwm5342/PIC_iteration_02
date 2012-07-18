@@ -1,0 +1,27 @@
+﻿<div class="span9">
+	<h2>All Products</h2>
+
+	<table class="table table-striped table-condensed">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th class="model-row">Model</th>
+				<th>Category</th>
+				<th>Manufacturer</th>
+			</tr>
+		</thead>
+		<tbody>
+		<% @products.each do |product| %>
+		<tr>
+			<td><%= product.name %></td>
+			<td><code><%= product.model %></code></td>
+			<td><a href="<%= category_path(product.category) %>"><%= product.category.name %></a></td>
+			<td><a href="<%= manufacturer_path(product.manufacturer) %>"><%= product.manufacturer.name %></a></td>
+			<td><a  class="btn" href="<%= product_path(product) %>">View</a></td>
+		</tr>
+		<% end %>
+		</tbody>
+	</table>
+
+	<%= paginate @products %>
+</div>

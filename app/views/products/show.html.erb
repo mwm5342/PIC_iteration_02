@@ -1,0 +1,32 @@
+﻿<div class="span9">
+	<h2><a href="<%= products_path %>">Products</a> > <%= @product.name %></h2>
+	<div class="span4 pull-right prod-img">
+		<% if !@product.picture? %>
+			<p class="well"><em>Picture Not Available</em></p>
+		<% else %>
+			<a class="thumbnail" href="<%= @product.picture.url %>"><%= image_tag @product.picture.url %></a>
+		<% end %>
+	</div>
+	
+	<p><%= @product.description %></p>
+	
+	<table class="table prod-descr">
+		<tr>
+			<th>Model</th>
+			<td><code><%= @product.model %></code></td>
+		<tr>
+			<th>Category</th>
+		<td><%= @product.category.name %></td>
+		</tr>
+		<tr>
+			<th>Manufacturer</th>
+		<td><%= @product.manufacturer.name %></td>
+		</tr>
+		<% if @product.spec_sheet.exists? %>
+		<tr>
+			<th>Specifications</th>
+		<td><a class="btn btn-primary" href="<%= @product.spec_sheet.url %>">Spec Sheet (PDF)</a></td>
+		</tr>
+		<% end %>
+	</table>
+</div>

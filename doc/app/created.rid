@@ -1,0 +1,19 @@
+Wed, 18 Jul 2012 08:53:45 -0400
+doc/README_FOR_APP	Wed, 20 Jun 2012 08:23:52 -0400
+app/controllers/about_controller.rb	Tue, 26 Jun 2012 08:42:05 -0400
+app/controllers/application_controller.rb	Wed, 20 Jun 2012 08:23:50 -0400
+app/controllers/articles_controller.rb	Wed, 11 Jul 2012 08:18:01 -0400
+app/controllers/categories_controller.rb	Wed, 20 Jun 2012 15:34:09 -0400
+app/controllers/contact_controller.rb	Tue, 26 Jun 2012 08:48:57 -0400
+app/controllers/home_controller.rb	Wed, 20 Jun 2012 13:34:40 -0400
+app/controllers/manufacturers_controller.rb	Mon, 25 Jun 2012 11:28:09 -0400
+app/controllers/products_controller.rb	Wed, 11 Jul 2012 08:18:10 -0400
+app/helpers/about_helper.rb	Tue, 26 Jun 2012 08:42:05 -0400
+app/helpers/application_helper.rb	Tue, 10 Jul 2012 15:40:09 -0400
+app/helpers/contact_helper.rb	Tue, 26 Jun 2012 08:48:57 -0400
+app/helpers/home_helper.rb	Wed, 20 Jun 2012 13:34:40 -0400
+app/models/article.rb	Tue, 26 Jun 2012 09:21:35 -0400
+app/models/category.rb	Wed, 20 Jun 2012 08:35:44 -0400
+app/models/manufacturer.rb	Tue, 17 Jul 2012 09:38:22 -0400
+app/models/product.rb	Wed, 11 Jul 2012 10:34:03 -0400
+app/models/user.rb	Wed, 20 Jun 2012 08:39:50 -0400

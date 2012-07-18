@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title><%= page_title %></title>
+	<link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+
+<body>
+<div class="container"><!-- BEGIN MAIN CONTAINER -->
+
+<header>
+	<!-- BEGIN TOP SEARCH-BAR -->
+	<div class = "navbar navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+			
+				<ul class="nav">
+					<li class=" <%= is_active?("home") %>"><a href="<%= root_path %>">
+						<i class="icon-home icon-white"></i> Home</a>
+					</li>
+					<li class="dropdown <%= is_active?("products") %>"><a  class="dropdown-toggle" data-toggle="dropdown" href="#">
+						<i class="icon-shopping-cart icon-white"></i> Products
+						<b class="caret"></b>
+						</a>
+						<ul class="dropdown-menu">
+							<li><%= link_to "Browse all", products_path %></li>
+							<li><%= link_to "Browse by Manufacturer", manufacturers_path %></li>
+							<li><%= link_to "Browse by Category", categories_path %></li>
+						</ul>
+					</li>
+					<li class=" <%= is_active?("articles") %>"><a href="<%= articles_path %>">
+						<i class="icon-inbox icon-white"></i> News</a>
+					</li>
+					<li class=" <%= is_active?("about") %>"><a href="<%= about_path %>">
+						<i class="icon-info-sign icon-white"></i> About</a>
+					</li>
+					<li class=" <%= is_active?("contact") %>"><a href="<%= contact_path %>">
+						<i class="icon-envelope icon-white"></i> Contact</a>
+					</li>
+				</ul>
+				<form class="navbar-search pull-right">
+					<i class="icon-search icon-white"></i>
+					<input type="text" class="search-query span2" placeholder="Search">
+				</form>
+			</div>
+		</div>
+	</div>
+	<!-- END TOP SEARCH-NAVIGATION -->
+	
+	<div class="title">
+		<h1 class="jumbo">Power Ignition &amp; Controls Appalachia</h1>
+	</div>
+</header>
+
+	<div class="row main">
+		<!-- SIDE NAVIGATION -->
+		<div class="span3">
+			<div class="well" style="padding: 8px 0;">
+				<ul class="nav nav-list">
+				
+					<li class="nav-header">Products by Manufacturer</li>
+					<% for @man in Manufacturer.all.sample(7) %>
+							<li class="center-link">
+								<a href="<%= manufacturer_path(@man) %>"><%= truncate(@man.name, :length => 29) %></a>
+							</li>
+					<% end %>
+					<%= link_to "See all Manufacturers »", manufacturers_path, :class=>"btn btn-mini" %>
+					
+					<li class="nav-header">Products by Category</li>
+					<% for @cat in Category.all.sample(7) %>
+					<li class="center-link">
+						<a href="<%= category_path(@cat) %>"><%= truncate(@cat.name, :length => 29)  %></a>
+					</li>
+					<% end %>
+					<%= link_to "See all Categories »", categories_path, :class=>"btn btn-mini" %>
+				</ul>
+			</div>
+		</div>
+		<!-- END SIDE NAVIGATION -->
+		<%= yield %>
+	</div>
+</div><!-- END MAIN CONTAINER -->
+
+	<footer class="footer">
+		<div class="container">
+			<div class="row">
+			<div class="span8">
+				<ul class="nav nav-pills">
+					<li class=" <%= is_active?("home") %>"><a href="<%= root_path %>">
+						Home</a>
+					</li>
+					<li class="dropup <%= is_active?("products") %>"><a  class="dropdown-toggle" data-toggle="dropdown" href="#">
+					Products <b class="caret"></b>
+						</a>
+						<ul class="dropdown-menu">
+							<li><%= link_to "Browse all", products_path %></li>
+							<li><%= link_to "Browse by Manufacturer", manufacturers_path %></li>
+							<li><%= link_to "Browse by Category", categories_path %></li>
+						</ul>
+					</li>
+					<li class=" <%= is_active?("articles") %>"><a href="<%= articles_path %>">News</a>
+					</li>
+					<li class=" <%= is_active?("about") %>"><a href="<%= about_path %>">About</a>
+					</li>
+					<li class=" <%= is_active?("contact") %>"><a href="<%= contact_path %>">Contact</a>
+					</li>
+				</ul>
+			</div>
+			<div class="span4">
+				<h6 class="pull-right">Copyright &copy; PIC Appalachia, 2012.</h6>
+				<h6 class="pull-right">All Rights Reserved.</h6>
+			</div>
+	</footer>
+</body>
+</html>

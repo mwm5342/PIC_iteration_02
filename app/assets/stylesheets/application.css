@@ -1,0 +1,79 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require twitter/bootstrap
+ */
+ 
+ 
+	.man-tr	{
+		height: 100px;
+	}
+	
+	.model-row	{
+		min-width: 100px;
+	}
+ 
+	.span9 h2	{
+		padding-bottom: 0px;
+	}
+ 
+	.centered	{
+		text-align: center;
+	}
+	
+	.right	{
+		text-align: right;
+	}
+	
+	.jumbo	{
+		font-size: 300%;
+		color: #ffffff;
+		text-shadow: 2px 2px 2px #000;
+		padding-top: 55px;
+		padding-left: 500px;
+	}
+	
+	.title	{
+		margin-top: 40px;
+		background: url('img/top_bg.png') no-repeat ;
+		height: 180px;
+		border-bottom-right-radius: 15px;
+		border-bottom-left-radius: 15px;
+	}
+	
+	.prod-img	{
+		margin-bottom: 20px;
+	}
+	
+	.main	{
+		margin-top: 20px;
+	}
+	
+	.footer	{
+		color: #fff;
+		border-top: 20px solid #222;
+		min-height: 100px;
+		padding-top: 10px;
+		margin-bottom: 0;
+		pading-bottom: 0;		
+		background-image: linear-gradient(bottom, rgb(34,34,34) 10%, rgb(51,51,51) 100%);
+		background-image: -o-linear-gradient(bottom, rgb(34,34,34) 10%, rgb(51,51,51) 100%);
+		background-image: -moz-linear-gradient(bottom, rgb(34,34,34) 10%, rgb(51,51,51) 100%);
+		background-image: -webkit-linear-gradient(bottom, rgb(34,34,34) 10%, rgb(51,51,51) 100%);
+		background-image: -ms-linear-gradient(bottom, rgb(34,34,34) 10%, rgb(51,51,51) 100%);
+		background-image: -webkit-gradient(
+			linear,
+			left bottom,
+			left top,
+			color-stop(0.1, rgb(34,34,34)),
+			color-stop(1, rgb(51,51,51))
+		);
+	}

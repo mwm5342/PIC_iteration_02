@@ -1,0 +1,17 @@
+﻿<div class="span9">
+	<h2>Browse Products by Manufacturer</h2><br>
+	<table class="table">
+			<tbody>
+			<% @manufacturers.each do |manufacturer| %>
+			<tr class="man-tr">
+				<td>
+					<% if manufacturer.logo.exists? %>
+					<%= image_tag manufacturer.logo.url(:thumb) %>
+					<% end %>
+				</td>
+				<td><h2><%= link_to manufacturer.name, manufacturer_path(manufacturer)  %></h2></td>
+			</tr>
+			<% end %>
+			</tbody>
+	</table>
+</div>

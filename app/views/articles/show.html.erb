@@ -1,0 +1,8 @@
+﻿<div class="span9">
+	<h2><%= @article.title %></h2><br>
+	<p><span class="label label-info">Published:</span> <%= @article.published.strftime("%B %d, %Y") %></p><br>
+	<div class="well">
+		<p><%= truncate(@article.body, :length => 800) %></p>
+		<p class="centered"><a class="btn btn-primary" href="<%= @article.pdf.url %>">Read the Full Article (PDF)</a></p>
+	</div>
+</div>
